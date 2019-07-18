@@ -14,3 +14,8 @@ alias nginxreload="sudo /usr/local/nginx/sbin/nginx -s reload"
 alias nginxtest="sudo /usr/local/nginx/sbin/nginx -t"
 alias httpdreload="sudo /usr/sbin/apachectl -k graceful"
 alias httpdtest="sudo /usr/sbin/apachectl -t && /usr/sbin/apachectl -t -D DUMP_VHOSTS"
+
+#keys aws
+export AWS_ACCESS_KEY_ID=sua_access_key_id
+export AWS_SECRET_ACCESS_KEY=sua_secret_key
+export AWS_REGION=sa-east-1

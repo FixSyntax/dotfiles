@@ -1,0 +1,10 @@
+
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.tfstate.lock.info
+dep-worker-2.retry
+dep-worker-1.retry
+dependencies-master.retry
+join-command
+join-command2

@@ -19,3 +19,25 @@ alias httpdtest="sudo /usr/sbin/apachectl -t && /usr/sbin/apachectl -t -D DUMP_V
 export AWS_ACCESS_KEY_ID=sua_access_key_id
 export AWS_SECRET_ACCESS_KEY=sua_secret_key
 export AWS_REGION=sa-east-1
+
+recria_stage () {
+git checkout master
+git branch -D stage
+git push origin :stage
+git fetch -pt
+git rebase origin/master
+git checkout -b stage
+git push origin stage
+}
+
+recria_integration () {
+git checkout master
+git branch -D integration
+git push origin :integration
+git fetch -pt
+git rebase origin/master
+git checkout -b integration
+git push origin integration
+}
+
+export GOPATH=$HOME/go

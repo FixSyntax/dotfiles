@@ -3,12 +3,21 @@
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="\u \[\033[33m\]\W\[\033[01;36m\]\$(parse_git_branch)\[\033[00m\] $ "
+LS_COLORS='di=1;33';export LS_COLORS
 
 #alias aleatórios
+alias up="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias docker0="sudo ifconfig docker0 down"
+alias pwd="pwd && pwd | tr -d  '\n' | xclip -selection clipboard"
+alias install="sudo apt-get install -y"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+
 #Control web servers
 alias nginxreload="sudo /usr/local/nginx/sbin/nginx -s reload"
 alias nginxtest="sudo /usr/local/nginx/sbin/nginx -t"
@@ -30,14 +39,4 @@ git checkout -b stage
 git push origin stage
 }
 
-recria_integration () {
-git checkout master
-git branch -D integration
-git push origin :integration
-git fetch -pt
-git rebase origin/master
-git checkout -b integration
-git push origin integration
-}
-
-export GOPATH=$HOME/go
+echo -e "Hey $USER, cara, apenas \033[01;33mNão seja um idiota\033[01;37m!"

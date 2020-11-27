@@ -8,8 +8,8 @@ LS_COLORS='di=1;33';export LS_COLORS
 
 #alias aleatórios
 alias up="cd .."
-alias ..2="cd ../.."
-alias ..3="cd ../../.."
+alias up2="cd ../.."
+alias up3="cd ../../.."
 alias docker0="sudo ifconfig docker0 down"
 alias pwd="pwd && pwd | tr -d  '\n' | xclip -selection clipboard"
 alias install="sudo apt-get install -y"
